@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Overview - Phizzle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #64748b;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-dots {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .dot {
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .dot:nth-child(1) {
+            width: 4px;
+            height: 4px;
+        }
+
+        .dot:nth-child(2) {
+            width: 6px;
+            height: 6px;
+        }
+
+        .dot:nth-child(3) {
+            width: 8px;
+            height: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links > li > a:hover {
+            color: #94a3b8;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            min-width: 280px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-links > li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown li {
+            list-style: none;
+        }
+
+        .dropdown a {
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            text-transform: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0;
+            transition: background-color 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown a:hover {
+            background-color: #f8fafc;
+            color: #4a90b8;
+            border-left-color: #4a90b8;
+        }
+
+        .request-demo {
+            background: #d97706 !important;
+            color: white !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 6px !important;
+            transition: background 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600 !important;
+            font-size: 0.8rem !important;
+        }
+
+        .request-demo:hover {
+            background: #b45309 !important;
+            color: white !important;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: #ffffff;
+            padding: 4rem 0;
+        }
+
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #4a90b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Three Steps Section */
+        .steps-section {
+            margin-bottom: 5rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a90b8;
+            margin-bottom: 0.1rem;
+        }
+
+        .step-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            background: #16a34a;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: #e2e8f0;
+            padding: 4rem 0;
+            margin: 0 -2rem;
+        }
+
+        .benefits-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .benefits-header {
+            margin-bottom: 3rem;
+        }
+
+        .benefits-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .benefit-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Software Section */
+        .software-section {
+            margin: 5rem 0;
+        }
+
+        .software-header {
+            margin-bottom: 3rem;
+        }
+
+        .software-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .software-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .software-image {
+            width: 100%;
+            height: 400px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .software-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .feature-item {
+            border-left: 4px solid #4a90b8;
+            padding-left: 1.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #ffffff;
+            padding: 3rem 0;
+            margin: 0 -2rem;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #16a34a;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffffff;
+        }
+
+        .email-signup h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            flex-direction: column;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            background: #334155;
+            color: #ffffff;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .email-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: #4a90b8;
+        }
+
+        .email-submit {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            background: #4a90b8;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .email-submit:hover {
+            background: #3a7ba8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #64748b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-link.linkedin {
+            border-color: #0077b5;
+            color: #0077b5;
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+            color: #ffffff;
+        }
+
+        .social-link.facebook {
+            border-color: #1877f2;
+            color: #1877f2;
+        }
+
+        .social-link.facebook:hover {
+            background: #1877f2;
+            color: #ffffff;
+        }
+
+        .social-link.youtube {
+            border-color: #ff0000;
+            color: #ff0000;
+        }
+
+        .social-link.youtube:hover {
+            background: #ff0000;
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-section,
+            .software-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .email-signup {
+                grid-column: 1 / -1;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .benefits-header h2,
+            .software-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                Phizzle
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">Platform ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="index.html">Platform Overview</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                        <li><a href="automate.html">Automate</a></li>
+                        <li><a href="integrate.html">Integrate</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Solutions ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="connected-plant.html">Connected Plant</a></li>
+                        <li><a href="device-agents.html">Device Agents</a></li>
+                        <li><a href="phizzle-lens.html">Phizzle Lens</a></li>
+                        <li><a href="edge-manager.html">Edge Manager</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Applications ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="biopharma-manufacturing.html">Biopharma Manufacturing</a></li>
+                        <li><a href="aerospace-manufacturing.html">Aerospace Manufacturing</a></li>
+                        <li><a href="food-production.html">Food Production</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Resources ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">Videos</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">Webinars</a></li>
+                        <li><a href="connected-plant-sandbox.html">Connected Plant Sandbox</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Partners ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="#" onclick="alert('Coming Soon')">Partners</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">Investors</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Company ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="#" onclick="alert('Coming Soon')">About Us</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">Careers</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">News</a></li>
+                        <li><a href="#" onclick="alert('Coming Soon')">Contact</a></li>
+                    </ul>
+                </li>
+                <li><a href="request-demo.html" class="request-demo">Request a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Meet Phizzle's Connected Plant:</h1>
+                    <h2>Connect, Automate, and Integrate to Unlock Paperless GMP Workflows</h2>
+                    <p>Our platform enables manufacturers to connect, automate and integrate their instruments and GMP workflows directly with their digital systems. Eliminating pen and paper methods, multistep data entry SOPs and clunky middleware solutions.</p>
+                </div>
+                <div class="hero-image">
+                    Platform Dashboard Interface
+                </div>
+            </section>
+
+            <!-- Three Steps Section -->
+            <section class="steps-section">
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-title">Connecting</div>
+                        <div class="step-subtitle">to Analytical Scientific Instruments</div>
+                        <div class="step-description">Our platform communicates with your instruments in their preferred protocol to connect with our platform - enabling continuous data capture and remote operation.</div>
+                        <a href="connect.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-title">Automating</div>
+                        <div class="step-subtitle">Data Formatting</div>
+                        <div class="step-description">Phizzle's Data Formatting Engine translates sample results into a standardized format that can be pushed back to LIMS, MES, or QMS.</div>
+                        <a href="automate.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-title">Integrating</div>
+                        <div class="step-subtitle">with Digital Systems and Existing SOPs</div>
+                        <div class="step-description">Using secure MQTT, formatted data is synced to your existing LIMS, MES, or QMS without changing any of your existing SOPs.</div>
+                        <a href="integrate.html" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="benefits-section">
+                <div class="benefits-container">
+                    <div class="benefits-header">
+                        <h2>Benefits of Digitized GMP Workflows</h2>
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <h3>Ensure Data Integrity</h3>
+                            <p>Our software-based solution guides your data directly from your analytical instruments to your digital systems, removing human error from data capturing, formatting and entry processes.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>Cost Savings</h3>
+                            <p>Eliminate paper printout expenses entirely. Reduce labor costs by decreasing deviation reports and automating data capture and manual formatting efforts. Keep your facility audit-ready at all times, minimizing potential down time and expenses of FDA audits.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>Increased Lab Tech Productivity</h3>
+                            <p>Automating redundant and tedious tasks allows lab techs to focus on critical analysis, method optimization, and value-added laboratory activities.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>Protection Against Data Loss</h3>
+                            <p>Continuous data capture is maintained even during network failures and external interruptions. Your critical analytical data is automatically preserved and synchronized once connectivity is restored.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>Built-in Compliance</h3>
+                            <p>Built-in electronic review and signature workflows ensure 21 CFR Part 11 compliance for BioPharma manufacturers and Food Production facilities.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <h3>Enables Remote Operation</h3>
+                            <p>Not only do we digitize GMP workflows, our platform allows you to take samples remotely from our UI. Now your lab techs no longer need to be in a bunny suit to take scheduled or ad hoc samples.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Software Section -->
+            <section class="software-section">
+                <div class="software-header">
+                    <h2>The Technical Infrastructure That Makes All of This Possible:</h2>
+                </div>
+                
+                <div class="software-content">
+                    <div class="software-image">
+                        Technical Architecture Diagram
+                    </div>
+                    
+                    <div class="software-features">
+                        <div class="feature-item">
+                            <h3>Microservices Architecture:</h3>
+                            <p>That abstracts multi-vendor instruments so they appear as one instrument type with one interface on our UI. Meaning even if a customer has an assortment of Mettler Toledo, Cole Palmer and Thermo Scientific pH meters in their production facility, they all appear as a pH meter.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <h3>Secure MQTT Communication:</h3>
+                            <p>Our platform utilizes outbound only communication so there are no open ports or any way that someone can externally connect on your scientific instruments.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <h3>Server-Grade Connectivity on the IoT Edge:</h3>
+                            <p>critical instrument data and workflows stored on the Edge enabling the same continuous monitoring and batch sampling workflows even when the network goes out, and all of the data is stored there until the network is back up.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <h3>Prebuilt Device Agents:</h3>
+                            <p>Simply connect your scientific instruments – our custom-built device agents handle everything behind the scenes, automatically communicating in native protocols, capturing sample data, and feeding it to our Data Formatting Engine for standardization.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-container">
+                    <h2>Explore Phizzle's Solutions</h2>
+                    <p>Learn About How Phizzle Makes Digitized GMP Workflows Possible.</p>
+                    <a href="connected-plant.html" class="cta-btn">Explore Solutions</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
