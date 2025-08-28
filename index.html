@@ -208,14 +208,15 @@
         .hero-image {
             width: 100%;
             height: 300px;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-size: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Three Steps Section */
@@ -360,14 +361,15 @@
         .software-image {
             width: 100%;
             height: 400px;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-size: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .software-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .software-features {
@@ -737,7 +739,7 @@
                     <a href="#">Solutions ▼</a>
                     <ul class="dropdown">
                         <li><a href="connected-plant.html">Connected Plant</a></li>
-                        <li><a href="device-agents.html">Edge Puck</a></li>
+                        <li><a href="device-agents.html">Device Agents</a></li>
                         <li><a href="phizzle-lens.html">Phizzle Lens</a></li>
                         <li><a href="edge-manager.html">Edge Manager</a></li>
                     </ul>
@@ -791,7 +793,7 @@
                     <p>Our platform enables manufacturers to connect, automate and integrate their instruments and GMP workflows directly with their digital systems. Eliminating pen and paper methods, multistep data entry SOPs and clunky middleware solutions.</p>
                 </div>
                 <div class="hero-image">
-                    Platform Dashboard Interface
+                    <img src="https://i.postimg.cc/jd3X5GdL/AGV-v-Ufwgb4xoqu-VIyvw-Pg-A-312-G0s-BZz-Gxg-WZe-O70-HOo9edx-Gt-4-AQHUp-Wfp-Zg-Fl-Ygs-Tn-7k-ECq99j-J9-Rzt-Lb7-Eo-K8-xo-I35en.png" alt="Platform Dashboard Interface" />
                 </div>
             </section>
 
@@ -801,14 +803,14 @@
                     <div class="step-card">
                         <div class="step-title">Connecting</div>
                         <div class="step-subtitle">to Analytical Scientific Instruments</div>
-                        <div class="step-description">Our platform communicates with your instruments in their native protocols to connect with our platform - enabling continuous data capture and remote operation.</div>
+                        <div class="step-description">Our platform communicates with your instruments in their preferred protocol to connect with our platform - enabling continuous data capture and remote operation.</div>
                         <a href="connect.html" class="learn-more-btn">Learn More</a>
                     </div>
                     
                     <div class="step-card">
                         <div class="step-title">Automating</div>
                         <div class="step-subtitle">Data Formatting</div>
-                        <div class="step-description">Phizzle's Data Formatting Engine translates sample results into a standardized format that can be pushed directly to digital systems without any manual touchpoints</div>
+                        <div class="step-description">Phizzle's Data Formatting Engine translates sample results into a standardized format that can be pushed back to LIMS, MES, or QMS.</div>
                         <a href="automate.html" class="learn-more-btn">Learn More</a>
                     </div>
                     
@@ -870,7 +872,7 @@
                 
                 <div class="software-content">
                     <div class="software-image">
-                        Technical Architecture Diagram
+                        <img src="https://i.postimg.cc/vH4nPDbZ/Screenshot-2025-08-23-at-05-49-33.png" alt="Technical Architecture Diagram" />
                     </div>
                     
                     <div class="software-features">
@@ -908,4 +910,21 @@
         </div>
     </main>
 
-    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>
+                        <div class="logo-dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        Phizzle
+                    </h3>
+                    <p>Where GMP Meets IoT Precision</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link linkedin">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1
