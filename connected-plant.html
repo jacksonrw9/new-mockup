@@ -220,12 +220,44 @@
             margin: 5rem 0;
         }
 
-        .platform-overview p {
-            font-size: 1.1rem;
-            color: #64748b;
-            line-height: 1.6;
-            max-width: 800px;
+        .platform-overview .highlight-bubble {
+            background: #ffffff;
+            color: #4a90b8;
+            padding: 3rem 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .platform-overview .highlight-bubble:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .platform-overview .highlight-bubble p {
+            font-size: 1.4rem;
+            color: #4a90b8;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .platform-overview .highlight-bubble::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: #ffffff;
+            border-radius: 35px;
+            z-index: -1;
+            filter: blur(10px);
         }
 
         /* Pharma 4.0 Section */
@@ -668,7 +700,9 @@
 
             <!-- Platform Overview -->
             <section class="platform-overview">
-                <p>Connected Plant is the only software-defined solution to automate data capture and enable remote operation of multi-vendor APCs, microbial air samplers, and other analytical scientific instruments in GMP/ISO environments – all from one UI.</p>
+                <div class="highlight-bubble">
+                    <p>Connected Plant is the only software-defined solution to automate data capture and enable remote operation of multi-vendor APCs, microbial air samplers, and other analytical scientific instruments in GMP/ISO environments – all from one UI.</p>
+                </div>
             </section>
 
             <!-- Pharma 4.0 Section -->
