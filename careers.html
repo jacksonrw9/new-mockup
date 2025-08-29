@@ -179,22 +179,23 @@
             margin-bottom: 2rem;
         }
 
-        .see-roles-btn {
-            background: #f97316;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+        .invisible-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 60px;
+            background: transparent;
+            color: transparent;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s ease;
-            display: inline-block;
+            cursor: pointer;
+            margin-top: 30px;
         }
 
-        .see-roles-btn:hover {
-            background: #ea580c;
+        .invisible-button:hover {
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 25px;
         }
 
         /* Photo Collage */
@@ -408,43 +409,9 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="photo-collage">
-            <div class="photo-item photo-1">
-                <img src="https://i.postimg.cc/L8K7v2YQ/team-member-1.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-2">
-                <img src="https://i.postimg.cc/Z5P9wJx3/team-member-2.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-3">
-                <img src="https://i.postimg.cc/BnSK8p3T/team-member-3.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-4">
-                <img src="https://i.postimg.cc/XNr7BLkW/team-member-4.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-5">
-                <img src="https://i.postimg.cc/50MN9R8v/team-member-5.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-6">
-                <img src="https://i.postimg.cc/DwX6VYcL/team-member-6.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-7">
-                <img src="https://i.postimg.cc/GmQ8TKxS/team-member-7.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-8">
-                <img src="https://i.postimg.cc/wvT7NHJy/team-member-8.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-9">
-                <img src="https://i.postimg.cc/wBSC0zx1/team-member-9.jpg" alt="Team member">
-            </div>
-            <div class="photo-item photo-10">
-                <img src="https://i.postimg.cc/wM1xP2Lb/team-member-10.jpg" alt="Team member">
-            </div>
-        </div>
-        
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Join the Phizzle Team</h1>
-                <a href="#open-roles" class="see-roles-btn">See Open Roles</a>
+                <a href="#open-roles" class="invisible-button">See Open Roles</a>
             </div>
         </div>
     </section>
