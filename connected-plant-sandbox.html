@@ -147,7 +147,22 @@
             color: white !important;
         }
 
-        /* Main Content */
+        /* Hero Images */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
         .main-content {
             background: #ffffff;
             padding: 4rem 0;
@@ -301,7 +316,7 @@
 
         .workflow-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -462,6 +477,10 @@
                 gap: 2rem;
             }
 
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -518,7 +537,7 @@
                 <li>
                     <a href="#">Platform ▼</a>
                     <ul class="dropdown">
-                        <li><a href="platform-overview.html">Platform Overview</a></li>
+                        <li><a href="index.html">Platform Overview</a></li>
                         <li><a href="connect.html">Connect</a></li>
                         <li><a href="automate.html">Automate</a></li>
                         <li><a href="integrate.html">Integrate</a></li>
@@ -528,7 +547,7 @@
                     <a href="#">Solutions ▼</a>
                     <ul class="dropdown">
                         <li><a href="connected-plant.html">Connected Plant</a></li>
-                        <li><a href="device-agents.html">Edge Puck</a></li>
+                        <li><a href="edge-puck.html">Edge Puck</a></li>
                         <li><a href="phizzle-lens.html">Phizzle Lens</a></li>
                         <li><a href="edge-manager.html">Edge Manager</a></li>
                     </ul>
@@ -554,7 +573,6 @@
                     <a href="#">Partners ▼</a>
                     <ul class="dropdown">
                         <li><a href="#" onclick="alert('Coming Soon')">Partners</a></li>
-                        <li><a href="#" onclick="alert('Coming Soon')">Investors</a></li>
                     </ul>
                 </li>
                 <li>
@@ -574,6 +592,9 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="content-container">
+            <!-- Top Hero Image -->
+            <img src="https://i.postimg.cc/T389v8m4/Screenshot-2025-08-29-at-08-06-01.png" alt="Phizzle Connected Plant Platform Overview" class="hero-image">
+
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-content">
@@ -622,10 +643,18 @@
                 <div class="workflow-grid">
                     <div class="workflow-item">
                         <div class="workflow-visual">
-                            Connected Plant Interface Screenshot
+                            <img src="https://i.postimg.cc/V6Hq72m4/Screenshot-2025-08-29-at-08-06-30.png" alt="Remotely Sample Climet 1070" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                         </div>
-                        <div class="workflow-button">Remotely Sample</div>
-                        <p>On a Climet 1070</p>
+                        
+                        <div class="workflow-description">
+                            <h3>Remotely Sample On a Climet 1070</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-item">
+                        <div class="workflow-visual">
+                            <img src="https://i.postimg.cc/8c2hGWF6/Screenshot-2025-08-29-at-08-06-57.png" alt="Review and E-Sign Sample Data" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
                         
                         <div class="workflow-description">
                             <h3>Review and E-Sign Sample Data</h3>
@@ -635,11 +664,11 @@
                     
                     <div class="workflow-item">
                         <div class="workflow-visual">
-                            Review Interface Screenshot
+                            <img src="https://i.postimg.cc/T389v8m4/Screenshot-2025-08-29-at-08-06-01.png" alt="Sync Data to LIMS" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                         </div>
                         
                         <div class="workflow-description">
-                            <h3>Push Data Directly to LIMS</h3>
+                            <h3>Sync Data Directly to LIMS</h3>
                             <p>All From One UI</p>
                         </div>
                     </div>
@@ -668,7 +697,7 @@
                     <h4>Solutions</h4>
                     <ul>
                         <li><a href="connected-plant.html">Connected Plant</a></li>
-                        <li><a href="device-agents.html">Device Agents</a></li>
+                        <li><a href="edge-puck.html">Edge Puck</a></li>
                         <li><a href="phizzle-lens.html">Phizzle Lens</a></li>
                         <li><a href="edge-manager.html">Edge Manager</a></li>
                     </ul>
