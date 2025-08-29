@@ -153,7 +153,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 400px;
+            height: 800px;
             position: relative;
         }
 
@@ -193,44 +193,6 @@
             margin: 0 auto;
             padding: 0 2rem;
         }
-
-        /* Photo Collage */
-        .photo-collage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.8;
-        }
-
-        .photo-item {
-            position: absolute;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 3px solid white;
-            background: #f3f4f6;
-        }
-
-        .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Photo positioning */
-        .photo-1 { top: 10%; left: 8%; width: 150px; height: 120px; }
-        .photo-2 { top: 5%; left: 25%; width: 200px; height: 140px; }
-        .photo-3 { top: 15%; right: 25%; width: 180px; height: 130px; }
-        .photo-4 { top: 8%; right: 8%; width: 160px; height: 120px; }
-        .photo-5 { bottom: 35%; left: 5%; width: 140px; height: 160px; }
-        .photo-6 { bottom: 45%; left: 20%; width: 170px; height: 140px; }
-        .photo-7 { bottom: 30%; right: 15%; width: 190px; height: 150px; }
-        .photo-8 { bottom: 50%; right: 5%; width: 150px; height: 130px; }
-        .photo-9 { bottom: 10%; left: 30%; width: 160px; height: 120px; }
-        .photo-10 { bottom: 15%; right: 30%; width: 180px; height: 140px; }
 
         /* Company Info Section */
         .company-info {
@@ -290,12 +252,6 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .photo-item {
-                transform: scale(0.8);
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -314,15 +270,7 @@
             }
 
             .hero-section {
-                padding: 3rem 0;
-            }
-
-            .photo-collage {
-                opacity: 0.4;
-            }
-
-            .photo-item {
-                transform: scale(0.6);
+                height: 600px;
             }
 
             .info-box {
