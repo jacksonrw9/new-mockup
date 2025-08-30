@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform Overview - Phizzle</title>
+    <title>Integrate - Phizzle</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,7 +18,7 @@
             color: #333;
         }
 
-        /* Navigation */
+        /* Navigation - Same as other pages */
         nav {
             background: #64748b;
             padding: 1rem 0;
@@ -57,20 +57,9 @@
             border-radius: 50%;
         }
 
-        .dot:nth-child(1) {
-            width: 4px;
-            height: 4px;
-        }
-
-        .dot:nth-child(2) {
-            width: 6px;
-            height: 6px;
-        }
-
-        .dot:nth-child(3) {
-            width: 8px;
-            height: 8px;
-        }
+        .dot:nth-child(1) { width: 4px; height: 4px; }
+        .dot:nth-child(2) { width: 6px; height: 6px; }
+        .dot:nth-child(3) { width: 8px; height: 8px; }
 
         .nav-links {
             display: flex;
@@ -99,7 +88,6 @@
             color: #94a3b8;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -123,9 +111,7 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        .dropdown li {
-            list-style: none;
-        }
+        .dropdown li { list-style: none; }
 
         .dropdown a {
             color: #374151;
@@ -190,14 +176,6 @@
             line-height: 1.2;
         }
 
-        .hero-content h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #4a90b8;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
         .hero-content p {
             font-size: 1rem;
             color: #64748b;
@@ -225,224 +203,224 @@
 
         .hero-image {
             width: 100%;
-            height: 300px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Integration Steps Section */
+        .integration-section {
+            margin: 5rem 0;
+            text-align: center;
+        }
+
+        .integration-section h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 3rem;
+        }
+
+        .integration-flow {
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            margin-bottom: 3rem;
+        }
+
+        .integration-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .integration-step {
+            text-align: center;
+        }
+
+        .integration-step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a90b8;
+            margin-bottom: 1rem;
+        }
+
+        .integration-step p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Connected Plant Features Section */
+        .connected-plant-section {
+            background: #e2e8f0;
+            padding: 3rem 0;
+            margin: 5rem -1rem;
+            border-radius: 20px;
+        }
+
+        .connected-plant-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .connected-plant-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .connected-plant-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #4a90b8;
+            margin-left: 8rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .hero-image img {
+        .feature-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        /* Three Steps Section */
-        .steps-section {
-            margin-bottom: 5rem;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #4a90b8;
-            margin-bottom: 0.1rem;
-        }
-
-        .step-subtitle {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .step-description {
-            font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .learn-more-btn {
-            display: inline-block;
-            background: #22c55e;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s ease;
-        }
-
-        .learn-more-btn:hover {
-            background: #16a34a;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            background: #e2e8f0;
-            padding: 4rem 0;
-            margin: 0 -2rem;
-        }
-
-        .benefits-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .benefits-header {
-            margin-bottom: 3rem;
-        }
-
-        .benefits-header h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-        }
-
-        .benefit-item {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e8f0;
-        }
-
-        .benefit-item h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Software Section */
-        .software-section {
-            margin: 5rem 0;
-        }
-
-        .software-header {
-            margin-bottom: 3rem;
-        }
-
-        .software-header h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .software-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .software-image {
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .software-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .software-features {
+        .feature-content {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
         }
 
-        .feature-item {
-            border-left: 4px solid #4a90b8;
-            padding-left: 1.5rem;
-        }
-
-        .feature-item h3 {
-            font-size: 1.1rem;
+        .feature-card h3 {
+            font-size: 0.95rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 0.5rem;
         }
 
-        .feature-item p {
+        .feature-card p {
             color: #64748b;
-            line-height: 1.6;
+            line-height: 1.4;
+            margin-bottom: 0;
+            font-size: 0.8rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: #ffffff;
-            padding: 3rem 0;
-            margin: 0 -2rem;
+        .screenshot-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        .screenshot-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain !important;
+        }
+
+        /* Supported Integrations Section */
+        .integrations-section {
+            margin: 5rem 0;
             text-align: center;
         }
 
-        .cta-container {
+        .integrations-section h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 3rem;
+        }
+
+        .integration-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .integration-logo {
+            padding: 1rem 2rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: #ffffff;
+            padding: 4rem 0;
+            margin: 5rem -2rem 0;
+            text-align: center;
+        }
+
+        .final-cta-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .cta-section h2 {
-            font-size: 1.8rem;
+        .final-cta h2 {
+            font-size: 2rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
+        .final-cta p {
             font-size: 1rem;
             color: #64748b;
             margin-bottom: 2rem;
         }
 
-        .cta-btn {
+        .final-cta-btn {
             display: inline-block;
-            background: #22c55e;
+            background: #d97706;
             color: white;
             padding: 0.75rem 2rem;
             border-radius: 6px;
@@ -454,11 +432,11 @@
             transition: background 0.3s ease;
         }
 
-        .cta-btn:hover {
-            background: #16a34a;
+        .final-cta-btn:hover {
+            background: #b45309;
         }
 
-        /* Footer Section */
+        /* Footer Section - Updated with full footer from homepage */
         .footer {
             background: #1e293b;
             color: #e2e8f0;
@@ -690,19 +668,18 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-section,
-            .software-content {
+            .hero-section {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .steps-grid {
+            .integration-steps {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
+            .integration-logos {
+                flex-direction: column;
                 gap: 2rem;
             }
 
@@ -759,8 +736,7 @@
                 font-size: 2rem;
             }
 
-            .benefits-header h2,
-            .software-header h2 {
+            .integration-section h2, .connected-plant-header h2, .integrations-section h2 {
                 font-size: 1.8rem;
             }
 
@@ -851,130 +827,117 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-content">
-                    <h1>Meet Phizzle's Connected Plant:</h1>
-                    <h2>Connect, Automate, and Integrate to Unlock Paperless GMP Workflows</h2>
-                    <p>Our platform enables manufacturers to connect, automate and integrate their instruments and GMP workflows directly with their digital systems. Eliminating pen and paper methods, multistep data entry SOPs and clunky middleware solutions.</p>
+                    <h1>Integrating with Digital Systems</h1>
+                    <p>Realize paperless GMP workflows that are built to fit into your existing backend systems, SOPs, and compliance parameters.</p>
                     <a href="request-demo.html" class="request-demo-btn">Request a Demo</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://i.postimg.cc/jd3X5GdL/AGV-v-Ufwgb4xoqu-VIyvw-Pg-A-312-G0s-BZz-Gxg-WZe-O70-HOo9edx-Gt-4-AQHUp-Wfp-Zg-Fl-Ygs-Tn-7k-ECq99j-J9-Rzt-Lb7-Eo-K8-xo-I35en.png" alt="Platform Dashboard Interface" />
+                    <img src="https://i.postimg.cc/jdbJQTZD/image-1.png" alt="Digital Systems Integration Interface" style="width: 100%; height: 100%; object-fit: contain; border-radius: 18px;">
                 </div>
             </section>
 
-            <!-- Three Steps Section -->
-            <section class="steps-section">
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-title">Connecting</div>
-                        <div class="step-subtitle">to Analytical Scientific Instruments</div>
-                        <div class="step-description">Our platform communicates with multi-vendor and multi-type analytical instruments in their native language to connect with our platform – enabling continuous data capture and remote operation.</div>
-                        <a href="connect.html" class="learn-more-btn">Learn More</a>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-title">Automating</div>
-                        <div class="step-subtitle">Data Formatting</div>
-                        <div class="step-description">Phizzle's Data Formatting Engine standardizes sample results to singular format that is immediately ready to be synced to Digital Systems without any manual formatting efforts.</div>
-                        <a href="automate.html" class="learn-more-btn">Learn More</a>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-title">Integrating</div>
-                        <div class="step-subtitle">with Digital Systems and Existing SOPs</div>
-                        <div class="step-description">Using secure communication protocols, formatted data is synced to your existing LIMS, MES, or QMS without changing any of your existing SOPs. We build into your existing processes and remove unnecessary touchpoints to streamline data flow.</div>
-                        <a href="integrate.html" class="learn-more-btn">Learn More</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Benefits Section -->
-            <section class="benefits-section">
-                <div class="benefits-container">
-                    <div class="benefits-header">
-                        <h2>Benefits of Digitized GMP Workflows</h2>
-                    </div>
-                    
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <h3>Ensure Data Integrity</h3>
-                            <p>Our software-based solution guides your data directly from your analytical instruments to your digital systems, removing human error from data capturing, formatting and entry processes.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Immediate ROI</h3>
-                            <p>Eliminate paper printout expenses entirely. Reduce labor costs by decreasing deviation reports and automating data capture and manual formatting efforts. Keep your facility audit-ready at all times, minimizing potential down time and expenses of FDA audits.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Increased Lab Tech Productivity</h3>
-                            <p>Automating redundant and tedious tasks allows lab techs to focus on critical analysis, method optimization, and value-added laboratory activities.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Protection Against Data Loss</h3>
-                            <p>Continuous data capture is maintained even during network failures and external interruptions. Your critical analytical data is automatically preserved and synchronized once connectivity is restored.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Built-in Compliance</h3>
-                            <p>Built-in electronic review and signature workflows ensure regulatory compliance across industries—21 CFR Part 11 for BioPharma manufacturers and Food Production facilities, and AS9100/AS9102 requirements for aerospace manufacturers.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Enable Remote Operation</h3>
-                            <p>Not only do we digitize GMP workflows, our platform allows you to take samples remotely from our UI. Now your lab techs no longer need to be in a bunny suit to take scheduled or ad hoc samples.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Software Section -->
-            <section class="software-section">
-                <div class="software-header">
-                    <h2>The Technical Infrastructure That Makes All of This Possible:</h2>
+            <!-- Integration Flow Section -->
+            <section class="integration-section">
+                <h2>How Phizzle Integrates Data Sources with Digital Systems:</h2>
+                
+                <div class="integration-flow">
+                    <img src="https://i.postimg.cc/m2Bt1wgM/Screenshot-2025-08-28-at-06-54-45.png" alt="Integration Workflow Diagram" style="width: 100%; height: auto; border-radius: 12px;">
                 </div>
                 
-                <div class="software-content">
-                    <div class="software-image">
-                        <img src="https://i.postimg.cc/vH4nPDbZ/Screenshot-2025-08-23-at-05-49-33.png" alt="Technical Architecture Diagram" />
+                <div class="integration-steps">
+                    <div class="integration-step">
+                        <h3>Step 1: Connecting</h3>
+                        <p>The Edge Puck connects to your analytical scientific instruments and captures the raw sample data. Eliminating paper printouts and manual data collection/entry SOPs.</p>
                     </div>
                     
-                    <div class="software-features">
-                        <div class="feature-item">
-                            <h3>Microservices Architecture:</h3>
-                            <p>That abstracts multi-vendor instruments so they appear as one instrument type with one interface on our UI. Meaning even if a customer has an assortment of Mettler Toledo, Cole Palmer and Thermo Scientific pH meters in their production facility, they all appear as a pH meter.</p>
+                    <div class="integration-step">
+                        <h3>Step 2: Automating</h3>
+                        <p>Connected Plant standardizes the data using Phizzle's Data Formatting Engine, and enables operators to review results with compliant e-signatures and maintain detailed audit logs for FDA readiness from one UI.</p>
+                    </div>
+                    
+                    <div class="integration-step">
+                        <h3>Step 3: Integrating</h3>
+                        <p>Once Connected Plant is integrated into a manufacturer's infrastructure, formatted data is securely synced to their digital systems (adhering to the existing SOPs and compliance parameters).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connected Plant Features Section -->
+            <section class="connected-plant-section">
+                <div class="connected-plant-container">
+                    <div class="connected-plant-header">
+                        <h2>Integrating with Connected Plant:</h2>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <!-- First row: Text left, Image right -->
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Built in Review Process</h3>
+                                    <p>We make staying in compliance effortless—with a built-in review and e-sign process on our UI that we tailor to different industry applications, whether it's 21 CFR Part 11 for BioPharma manufacturing and Food Production, or AS9100 for Aerospace Cleanrooms.</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/wxV0mwkY/Screenshot-2025-08-23-at-09-28-17.png" alt="Review Process Interface">
+                            </div>
                         </div>
                         
-                        <div class="feature-item">
-                            <h3>Secure Instrument Communication:</h3>
-                            <p>Our platform utilizes outbound only communication, so there are no open ports or any way that someone can externally connect on your scientific instruments.</p>
+                        <!-- Second row: Image left, Text right -->
+                        <div class="feature-row feature-row-reverse">
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/gkm19wgm/Screenshot-2025-08-23-at-09-29-23.png" alt="Data Sync Dashboard">
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Sync Data Directly to LIMS, MES, or QMS</h3>
+                                    <p>Sync data directly to your digital systems without jeopardizing anything. You don't risk or change any of your existing SOPs.</p>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="feature-item">
-                            <h3>Server-Grade Connectivity on the IoT Edge:</h3>
-                            <p>Critical instrument data and workflows are stored on the Edge enabling the same continuous monitoring and batch sampling even when the network goes out.</p>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <h3>Prebuilt Device Agents:</h3>
-                            <p>Our Pre-built device agents handle everything behind the scenes, automatically communicating in native protocols of each instrument and handling all of the idosyncacies, so all you have to do is connect your instruments with our 5 step process to enable continous data capture, automated data formatting and remote operation. </p>
+                        <!-- Third row: Text left, Image right -->
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Schedule Batch Samples from LIMS</h3>
+                                    <p>Push scheduled samples back from LIMS, MES, or QMS to our Platform, so they can be carried out – either automatically or with a lab tech present.</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/Gmh0DBDq/image-2.png" alt="Batch Scheduling Interface">
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <div class="cta-container">
-                    <h2>Explore Phizzle's Solutions</h2>
-                    <p>Learn About How Phizzle Makes Digitized GMP Workflows Possible.</p>
-                    <a href="connected-plant.html" class="cta-btn">Explore Solutions</a>
+            <!-- Supported Integrations Section -->
+            <section class="integrations-section">
+                <h2>Supported Integrations</h2>
+                
+                <div class="integration-logos">
+                    <div class="integration-logo">LABWARE</div>
+                    <div class="integration-logo">SENATE</div>
+                </div>
+                
+                <div class="final-cta">
+                    <div class="final-cta-container">
+                        <h2>Realize Fully Digitized GMP Workflows</h2>
+                        <p>Once we've integrated with your digital systems, our solution handles everything: continuous capture, automatic data formatting, and secure communication with your infrastructure. Your data flows smoothly end-to-end with zero manual touch points.</p>
+                        
+                        <div style="margin: 2rem 0; padding: 1rem; background: #f8fafc; border-radius: 12px;">
+                            <p style="font-style: italic; color: #4a90b8;">See Us Take a Live Remote Sample, Review the Results and Sync the Data to LIMS all from One UI in Under 5 Minutes.</p>
+                        </div>
+                        
+                        <a href="request-demo.html" class="final-cta-btn">Request a Demo</a>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Updated with complete footer from homepage -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
