@@ -234,7 +234,17 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            justify-items: center;
+        }
+
+        /* Additional leadership row for remaining members */
+        .leadership-grid-row2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6rem;
+            max-width: 800px;
+            margin: 4rem auto 3rem;
             justify-items: center;
         }
 
@@ -620,6 +630,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .leadership-grid-row2 {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+
             .board-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -690,6 +705,11 @@
 
             .leadership-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .leadership-grid-row2 {
+                grid-template-columns: 1fr;
+                max-width: 300px;
             }
 
             .board-grid {
@@ -812,7 +832,9 @@
                         </div>
                         <div class="leader-name">Ed Lau, President</div>
                     </div>
-                    
+                </div>
+
+                <div class="leadership-grid-row2">
                     <div class="leader-card">
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/w58LQnP/image-39.png" alt="Stephen Peary">
