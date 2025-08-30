@@ -293,6 +293,13 @@
             margin-bottom: 3rem;
         }
 
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
         .feature-card {
             background: #ffffff;
             padding: 1rem;
@@ -300,14 +307,23 @@
             box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
             border: 1px solid #e2e8f0;
             border-left: 4px solid #4a90b8;
-            display: grid;
-            grid-template-columns: 0.75fr 1fr;
-            gap: 1rem;
-            align-items: center;
-            max-width: 75%;
             margin-left: 8rem;
             margin-top: 2rem;
             margin-bottom: 2rem;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .feature-content {
@@ -855,33 +871,39 @@
                     </div>
                     
                     <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-content">
-                                <h3>Built in Review Process</h3>
-                                <p>We make staying in compliance effortless—with a built-in review and e-sign process on our UI that we tailor to different industry applications, whether it's 21 CFR Part 11 for BioPharma manufacturing and Food Production, or AS9100 for Aerospace Cleanrooms.</p>
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Built in Review Process</h3>
+                                    <p>We make staying in compliance effortless—with a built-in review and e-sign process on our UI that we tailor to different industry applications, whether it's 21 CFR Part 11 for BioPharma manufacturing and Food Production, or AS9100 for Aerospace Cleanrooms.</p>
+                                </div>
                             </div>
-                            <div class="screenshot-placeholder">
-                                <img src="https://i.postimg.cc/wxV0mwkY/Screenshot-2025-08-23-at-09-28-17.png" alt="Review Process Interface" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
-                            </div>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-content">
-                                <h3>Sync Data Directly to LIMS, MES, or QMS</h3>
-                                <p>Sync data directly to your digital systems without jeopardizing anything. You don't risk or change any of your existing SOPs.</p>
-                            </div>
-                            <div class="screenshot-placeholder">
-                                <img src="https://i.postimg.cc/gkm19wgm/Screenshot-2025-08-23-at-09-29-23.png" alt="Data Sync Dashboard" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/wxV0mwkY/Screenshot-2025-08-23-at-09-28-17.png" alt="Review Process Interface">
                             </div>
                         </div>
                         
-                        <div class="feature-card">
-                            <div class="feature-content">
-                                <h3>Schedule Batch Samples from LIMS</h3>
-                                <p>Push scheduled samples back from LIMS, MES, or QMS to our Platform, so they can be carried out – either automatically or with a lab tech present.</p>
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Sync Data Directly to LIMS, MES, or QMS</h3>
+                                    <p>Sync data directly to your digital systems without jeopardizing anything. You don't risk or change any of your existing SOPs.</p>
+                                </div>
                             </div>
-                            <div class="screenshot-placeholder">
-                                <img src="https://i.postimg.cc/Gmh0DBDq/image-2.png" alt="Batch Scheduling Interface" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/gkm19wgm/Screenshot-2025-08-23-at-09-29-23.png" alt="Data Sync Dashboard">
+                            </div>
+                        </div>
+                        
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                    <h3>Schedule Batch Samples from LIMS</h3>
+                                    <p>Push scheduled samples back from LIMS, MES, or QMS to our Platform, so they can be carried out – either automatically or with a lab tech present.</p>
+                                </div>
+                            </div>
+                            <div class="feature-image">
+                                <img src="https://i.postimg.cc/Gmh0DBDq/image-2.png" alt="Batch Scheduling Interface">
                             </div>
                         </div>
                     </div>
