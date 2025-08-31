@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platform Overview - Phizzle</title>
+    <title>Connected Plant - Phizzle</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,7 +18,7 @@
             color: #333;
         }
 
-        /* Navigation */
+        /* Navigation - Same as other pages */
         nav {
             background: #64748b;
             padding: 1rem 0;
@@ -57,20 +57,9 @@
             border-radius: 50%;
         }
 
-        .dot:nth-child(1) {
-            width: 4px;
-            height: 4px;
-        }
-
-        .dot:nth-child(2) {
-            width: 6px;
-            height: 6px;
-        }
-
-        .dot:nth-child(3) {
-            width: 8px;
-            height: 8px;
-        }
+        .dot:nth-child(1) { width: 4px; height: 4px; }
+        .dot:nth-child(2) { width: 6px; height: 6px; }
+        .dot:nth-child(3) { width: 8px; height: 8px; }
 
         .nav-links {
             display: flex;
@@ -99,7 +88,6 @@
             color: #94a3b8;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -123,9 +111,7 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        .dropdown li {
-            list-style: none;
-        }
+        .dropdown li { list-style: none; }
 
         .dropdown a {
             color: #374151;
@@ -186,7 +172,7 @@
             font-size: 2.5rem;
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
         }
 
@@ -225,89 +211,141 @@
 
         .hero-image {
             width: 100%;
-            height: 300px;
+            height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Three Steps Section */
-        .steps-section {
-            margin-bottom: 5rem;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #4a90b8;
-            margin-bottom: 0.1rem;
-        }
-
-        .step-subtitle {
+            color: #64748b;
             font-size: 1rem;
+        }
+
+        /* Platform Overview */
+        .platform-overview {
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .platform-overview .highlight-bubble {
+            background: #ffffff;
+            color: #4a90b8;
+            padding: 3rem 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .platform-overview .highlight-bubble:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .platform-overview .highlight-bubble p {
+            font-size: 1.4rem;
+            color: #4a90b8;
+            line-height: 1.7;
+            margin: 0;
             font-weight: 500;
+        }
+
+        .platform-overview .highlight-bubble::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: #ffffff;
+            border-radius: 35px;
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+        /* Pharma 4.0 Section */
+        .pharma-section {
+            margin: 5rem 0;
+        }
+
+        .pharma-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pharma-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
             color: #1f2937;
             margin-bottom: 1rem;
+        }
+
+        .process-comparison {
+            margin-bottom: 3rem;
+        }
+
+        .process-row {
+            margin-bottom: 3rem;
+        }
+
+        .process-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: #64748b;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-visual {
+            width: 100%;
+            height: 120px;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
         }
 
         .step-description {
             font-size: 0.9rem;
             color: #64748b;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
+            line-height: 1.4;
         }
 
-        .learn-more-btn {
-            display: inline-block;
-            background: #22c55e;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s ease;
-        }
-
-        .learn-more-btn:hover {
-            background: #16a34a;
+        .arrow {
+            font-size: 2rem;
+            color: #4a90b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Benefits Section */
         .benefits-section {
             background: #e2e8f0;
             padding: 4rem 0;
-            margin: 0 -2rem;
+            margin: 5rem -2rem;
+            border-radius: 20px;
         }
 
         .benefits-container {
@@ -317,6 +355,7 @@
         }
 
         .benefits-header {
+            text-align: center;
             margin-bottom: 3rem;
         }
 
@@ -329,8 +368,8 @@
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
 
         .benefit-item {
@@ -339,10 +378,11 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid #e2e8f0;
+            border-left: 4px solid #4a90b8;
         }
 
         .benefit-item h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 1rem;
@@ -353,71 +393,11 @@
             line-height: 1.6;
         }
 
-        /* Software Section */
-        .software-section {
-            margin: 5rem 0;
-        }
-
-        .software-header {
-            margin-bottom: 3rem;
-        }
-
-        .software-header h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .software-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .software-image {
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .software-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .software-features {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .feature-item {
-            border-left: 4px solid #4a90b8;
-            padding-left: 1.5rem;
-        }
-
-        .feature-item h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-item p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
         /* CTA Section */
         .cta-section {
             background: #ffffff;
             padding: 3rem 0;
-            margin: 0 -2rem;
+            margin: 5rem -2rem 0;
             text-align: center;
         }
 
@@ -434,15 +414,17 @@
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            font-size: 1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
-        .cta-btn {
+        .cta-btn-primary {
             display: inline-block;
-            background: #22c55e;
+            background: #4a90b8;
             color: white;
             padding: 0.75rem 2rem;
             border-radius: 6px;
@@ -454,11 +436,29 @@
             transition: background 0.3s ease;
         }
 
-        .cta-btn:hover {
-            background: #16a34a;
+        .cta-btn-primary:hover {
+            background: #3a7ba8;
         }
 
-        /* Footer Section */
+        .cta-btn-secondary {
+            display: inline-block;
+            background: #d97706;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn-secondary:hover {
+            background: #b45309;
+        }
+
+        /* Footer - Updated with full footer from homepage */
         .footer {
             background: #1e293b;
             color: #e2e8f0;
@@ -690,20 +690,18 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-section,
-            .software-content {
+            .hero-section {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .steps-grid {
+            .process-steps {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .arrow {
+                transform: rotate(90deg);
             }
 
             .footer-content {
@@ -759,9 +757,13 @@
                 font-size: 2rem;
             }
 
-            .benefits-header h2,
-            .software-header h2 {
+            .pharma-header h2, .benefits-header h2 {
                 font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
             .footer-content {
@@ -851,39 +853,31 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-content">
-                    <h1>Meet Connected Plant:</h1>
-                    <h2>Connect, Automate, and Integrate to Unlock Paperless GMP Workflows and Ensure Data Integrity</h2>
-                    <p>Our platform enables regulated manufacturers to Connect, Automate and Integrate analytical instruments and GMP workflows directly with Digital Systems — eliminating pen and paper methods, multistep data entry SOPs and clunky middleware solutions.</p>
+                    <h1>Connected Plant</h1>
+                    <h2>Enabling Paperless GMP Workflows</h2>
+                    <p>Transform paper-based GMP processes into efficient digitized workflows that integrate seamlessly with existing SOPs and compliance parameters, from real-time monitoring to accelerating decision-making across manufacturing operations.</p>
                     <a href="request-demo.html" class="request-demo-btn">Request a Demo</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://i.postimg.cc/jd3X5GdL/AGV-v-Ufwgb4xoqu-VIyvw-Pg-A-312-G0s-BZz-Gxg-WZe-O70-HOo9edx-Gt-4-AQHUp-Wfp-Zg-Fl-Ygs-Tn-7k-ECq99j-J9-Rzt-Lb7-Eo-K8-xo-I35en.png" alt="Platform Dashboard Interface" />
+                    <img src="https://i.postimg.cc/jd3X5GdL/AGV-v-Ufwgb4xoqu-VIyvw-Pg-A-312-G0s-BZz-Gxg-WZe-O70-HOo9edx-Gt-4-AQHUp-Wfp-Zg-Fl-Ygs-Tn-7k-ECq99j-J9-Rzt-Lb7-Eo-K8-xo-I35en.png" alt="Connected Plant Dashboard Interface" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
             </section>
 
-            <!-- Three Steps Section -->
-            <section class="steps-section">
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-title">Connect</div>
-                        <div class="step-subtitle">to Analytical Scientific Instruments</div>
-                        <div class="step-description">Our platform communicates with multi-vendor and multi-type analytical instruments in their native language — enabling continuous data capture and remote operation.</div>
-                        <a href="connect.html" class="learn-more-btn">Learn More</a>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-title">Automate</div>
-                        <div class="step-subtitle">Data Formatting</div>
-                        <div class="step-description">Phizzle's Data Formatting Engine standardizes sample results to a singular format that is immediately ready to be synchronized to Digital Systems without any manual formatting efforts.</div>
-                        <a href="automate.html" class="learn-more-btn">Learn More</a>
-                    </div>
-                    
-                    <div class="step-card">
-                        <div class="step-title">Integrate</div>
-                        <div class="step-subtitle">with Digital Systems and Existing SOPs</div>
-                        <div class="step-description">Using secure communication protocols, formatted data synchronizes to existing LIMS, MES, QMS, or ERP without changing any SOPs or disrupting existing infrastructure.</div>
-                        <a href="integrate.html" class="learn-more-btn">Learn More</a>
-                    </div>
+            <!-- Platform Overview -->
+            <section class="platform-overview">
+                <div class="highlight-bubble">
+                    <p>Connected Plant is the only software-defined solution to automate data capture and enable remote operation of multi-vendor APCs, microbial air samplers, and other analytical scientific instruments in GMP/ISO environments – all from one UI.</p>
+                </div>
+            </section>
+
+            <!-- Pharma 4.0 Section -->
+            <section class="pharma-section">
+                <div class="pharma-header">
+                    <h2>How Our Platform Fits Into Pharma 4.0</h2>
+                </div>
+                
+                <div class="process-comparison">
+                    <img src="https://i.ibb.co/Vc2jjCBb/Connected-Plant-Slide.png" alt="Connected Plant Process Overview" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
                 </div>
             </section>
 
@@ -891,73 +885,23 @@
             <section class="benefits-section">
                 <div class="benefits-container">
                     <div class="benefits-header">
-                        <h2>Benefits of Digitized GMP Workflows</h2>
+                        <h2>Benefits of Connected Plant:</h2>
                     </div>
                     
                     <div class="benefits-grid">
                         <div class="benefit-item">
-                            <h3>Ensure Data Integrity</h3>
-                            <p>Our software-based solution guides data directly from analytical scientific instruments to Digital Systems, removing human error from data capturing, formatting, and entry processes.</p>
+                            <h3>Ensures Data Integrity and Audit Readiness</h3>
+                            <p>Maintain the highest data integrity standards through automated capture, real-time formatting, and secure digital workflows. Our automated documentation and compliance monitoring systems keep manufacturing facilities continuously audit ready. When inspectors arrive, data is organized and accessible.</p>
                         </div>
                         
                         <div class="benefit-item">
-                            <h3>Immediate ROI</h3>
-                            <p>Eliminate paper printout expenses entirely. Reduce labor costs by decreasing deviation reports and automating data capture and manual formatting efforts. Keep facilities audit-ready at all times, minimizing potential downtime and expenses of FDA audits.</p>
+                            <h3>Enables Remote Sampling from One Vendor Agnostic UI</h3>
+                            <p>Our platform enables remote operation of APCs, microbial samplers, and other analytical instruments from one vendor agnostic UI—eliminating unnecessary cleanroom entries and reducing contamination risk. Laboratory technicians can schedule and monitor operations remotely, freeing them to focus on critical analysis, method development, and value-added activities.</p>
                         </div>
                         
                         <div class="benefit-item">
-                            <h3>Increased Lab Tech Productivity</h3>
-                            <p>Automating redundant and tedious tasks allows laboratory technicians to focus on critical analysis, method optimization, and value-added laboratory activities.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Protection Against Data Loss</h3>
-                            <p>Continuous data capture is maintained even during network failures and external interruptions. Critical analytical data is automatically preserved and synchronized once connectivity is restored.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Built-in Compliance</h3>
-                            <p>Built-in electronic review and signature workflows ensure regulatory compliance across industries — 21 CFR Part 11 for BioPharma manufacturers and Food Production facilities, and AS9100/AS9102 requirements for aerospace manufacturers.</p>
-                        </div>
-                        
-                        <div class="benefit-item">
-                            <h3>Enable Remote Operation</h3>
-                            <p>Not only do we digitize GMP workflows, our platform allows users to take samples remotely from our UI. Laboratory technicians no longer need to be in a bunny suit to take scheduled or ad hoc samples.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Software Section -->
-            <section class="software-section">
-                <div class="software-header">
-                    <h2>The Technical Infrastructure That Makes All of This Possible:</h2>
-                </div>
-                
-                <div class="software-content">
-                    <div class="software-image">
-                        <img src="https://i.postimg.cc/vH4nPDbZ/Screenshot-2025-08-23-at-05-49-33.png" alt="Technical Architecture Diagram" />
-                    </div>
-                    
-                    <div class="software-features">
-                        <div class="feature-item">
-                            <h3>Microservices Architecture:</h3>
-                            <p>That abstracts multi-vendor instruments so they appear as one instrument type with one interface on our UI. Meaning even if a customer has an assortment of Mettler Toledo, Cole Palmer and Thermo Scientific pH meters in their production facility, they all appear as a pH meter.</p>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <h3>Secure Instrument Communication:</h3>
-                            <p>Our platform utilizes outbound-only communication, so there are no open ports or any way that someone can externally connect to scientific instruments.</p>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <h3>Server-Grade Connectivity on the IoT Edge:</h3>
-                            <p>Critical instrument data and workflows are stored on the Edge Puck, enabling the same continuous monitoring and batch sampling even during network interruptions or connectivity failures.</p>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <h3>Pre-Built Device Agents:</h3>
-                            <p>Our pre-built device agents handle everything behind the scenes, automatically communicating in native protocols of each instrument and handling all of the idiosyncrasies, so all users have to do is connect instruments with our 5-step process to enable continuous data capture, automated data formatting, and remote operation.</p>
+                            <h3>Delivers Significant Cost Savings</h3>
+                            <p>Eliminating manual data capture and formatting removes paper costs and substantially reduces the number of deviation reports, lowering labor costs.</p>
                         </div>
                     </div>
                 </div>
@@ -966,15 +910,17 @@
             <!-- CTA Section -->
             <section class="cta-section">
                 <div class="cta-container">
-                    <h2>Explore Phizzle's Solutions</h2>
-                    <p>Learn About How Phizzle Makes Digitized GMP Workflows Possible.</p>
-                    <a href="connected-plant.html" class="cta-btn">Explore Solutions</a>
+                    <h2>See How Connected Plant Transforms GMP Workflows:</h2>
+                    <div class="cta-buttons">
+                        <a href="connected-plant-sandbox.html" class="cta-btn-primary">Test Drive Connected Plant in Our Sand Box Environment</a>
+                        <a href="request-demo.html" class="cta-btn-secondary">Request a Demo</a>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Updated with full footer from homepage -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
