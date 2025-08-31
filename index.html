@@ -174,7 +174,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.postimg.cc/6qBqvHw8/cleanroomlandingimage.png');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/fV8qM3Kz/AGV-v-Uce-YWYWq-K8ev-Co-Dlw-Afbewt-Mf-Ik-IXV1-IAbz-Yo-M9cs5-EBYNOJsy-KUM44t-Jkwsh-ZM5-Hgt-e76-D1ph-B.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -726,6 +726,11 @@
                 gap: 3rem;
             }
 
+            .platform-bubble {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
             .benefit-item {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -884,10 +889,12 @@
     <!-- Platform Section -->
     <section class="platform-section">
         <div class="platform-container">
-            <div class="platform-bubble">
-                <h2>GMP Workflows, Digitized in 3 Steps:</h2>
-                <p>Eliminating Pen and Paper Processes, Data Loss From External Interruptions and Clunky Middleware Push Data to LIMS All From One UI.</p>
-                <a href="connect.html" class="how-it-works-btn">See how it works</a>
+            <div class="platform-bubble" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="platform-left">
+                    <h2>GMP Workflows, Digitized in 3 Steps:</h2>
+                    <p>Eliminating pen and paper processes, data loss from external interruptions and clunky middleware push data to LIMS all from one UI.</p>
+                    <a href="connect.html" class="how-it-works-btn">See how it works</a>
+                </div>
                 
                 <div class="platform-steps">
                     <div class="step">
@@ -958,12 +965,12 @@
             </div>
             
             <!-- Case Study Section -->
-            <div style="width: calc(100% + 4rem); background: #ffffff; margin: 3rem -2rem; padding: 3rem; text-align: center;">
+            <div style="width: 100%; background: #f8fafc; margin: 0; padding: 2.5rem 0 1rem 0; text-align: center;">
                 <div style="max-width: 800px; margin: 0 auto;">
                     <p style="font-size: 1.3rem; color: #1f2937; line-height: 1.6; margin-bottom: 2rem;">
-                        How a top-3 global biopharma manufacturer eliminate over 80% of their air particle counter related failure reports and save an average of $4,781 per instrument annually in labor costs across 3 production sites and hundreds of instruments.
+                        How a top-3 global biopharma manufacturer eliminated over 80% of their air particle counter related failure reports and save an average of $4,781 per instrument annually in labor costs across 3 production sites and hundreds of instruments.
                     </p>
-                    <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #22c55e; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;">
+                    <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #4a90b8; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;">
                         <span style="font-size: 0.8rem;">▶</span>
                         Learn More
                     </a>
