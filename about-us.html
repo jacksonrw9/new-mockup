@@ -256,10 +256,10 @@
             border: 1px solid #e2e8f0;
             transition: box-shadow 0.3s ease;
             width: 200px;
-            height: 240px;
+            height: 290px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
         }
 
@@ -268,8 +268,8 @@
         }
 
         .leader-photo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 8px;
             margin: 0 auto 1rem;
             background: #f3f4f6;
@@ -326,10 +326,10 @@
             border: 1px solid #e2e8f0;
             transition: box-shadow 0.3s ease;
             width: 200px;
-            height: 220px;
+            height: 290px; /* Increased height to accommodate title */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
         }
 
@@ -338,8 +338,8 @@
         }
 
         .board-photo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 8px;
             margin: 0 auto 1rem;
             background: #f3f4f6;
@@ -363,6 +363,14 @@
             font-size: 0.95rem;
             font-weight: 600;
             color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .board-title {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+            line-height: 1.3;
         }
 
         /* Additional board row for remaining members */
@@ -816,21 +824,24 @@
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/fVZDdkTN/image-36.png" alt="Ben Davis">
                         </div>
-                        <div class="leader-name">Ben Davis, CEO</div>
+                        <div class="leader-name">Ben Davis</div>
+                        <div class="leader-title">CEO</div>
                     </div>
                     
                     <div class="leader-card">
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/Z6DDwCP1/image-37.png" alt="Mike Patrick">
                         </div>
-                        <div class="leader-name">Mike Patrick, CIO</div>
+                        <div class="leader-name">Mike Patrick</div>
+                        <div class="leader-title">CIO</div>
                     </div>
                     
                     <div class="leader-card">
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/m57nXSr3/image-42.png" alt="Ed Lau">
                         </div>
-                        <div class="leader-name">Ed Lau, President</div>
+                        <div class="leader-name">Ed Lau</div>
+                        <div class="leader-title">President</div>
                     </div>
                 </div>
 
@@ -839,14 +850,16 @@
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/w58LQnP/image-39.png" alt="Stephen Peary">
                         </div>
-                        <div class="leader-name">Stephen Peary, CFO</div>
+                        <div class="leader-name">Stephen Peary</div>
+                        <div class="leader-title">CFO</div>
                     </div>
                     
                     <div class="leader-card">
                         <div class="leader-photo">
                             <img src="https://i.ibb.co/dwMQ7541/image-40.png" alt="Ryan Brady">
                         </div>
-                        <div class="leader-name">Ryan Brady, CTO</div>
+                        <div class="leader-name">Ryan Brady</div>
+                        <div class="leader-title">CTO</div>
                     </div>
                 </div>
             </section>
@@ -860,28 +873,32 @@
                         <div class="board-photo">
                             <img src="https://i.ibb.co/fVZDdkTN/image-36.png" alt="Ben Davis">
                         </div>
-                        <div class="board-name">Ben Davis    Phizzle</div>
+                        <div class="board-name">Ben Davis</div>
+                        <div class="board-title">CEO, Phizzle</div>
                     </div>
                     
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://i.ibb.co/HTS9m8kh/image-43.png" alt="Jim Whims">
                         </div>
-                        <div class="board-name">Jim Whims    Alsop-Louie</div>
+                        <div class="board-name">Jim Whims</div>
+                        <div class="board-title">Alsop-Louie</div>
                     </div>
                     
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://i.ibb.co/dJsgrs3k/image-44.png" alt="Mark Krentzman">
                         </div>
-                        <div class="board-name">Mark Krentzman    Jones & Vining</div>
+                        <div class="board-name">Mark Krentzman</div>
+                        <div class="board-title">Jones & Vining</div>
                     </div>
                     
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://i.ibb.co/7tkQxnBw/image-46.png" alt="Lena Wu">
                         </div>
-                        <div class="board-name">Lena Wu    Director/Strategic Advisor</div>
+                        <div class="board-name">Lena Wu</div>
+                        <div class="board-title">Director/Strategic Advisor</div>
                     </div>
                 </div>
 
@@ -890,21 +907,24 @@
                         <div class="board-photo">
                             <img src="https://i.ibb.co/hRVkq85r/image-47.png" alt="Ron Ricci">
                         </div>
-                        <div class="board-name">Ron Ricci    Trasnparency Imperative</div>
+                        <div class="board-name">Ron Ricci</div>
+                        <div class="board-title">Transparency Imperative</div>
                     </div>
                     
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://i.ibb.co/Zp5RmFKm/image-48.png" alt="Billy Valtos">
                         </div>
-                        <div class="board-name">Billy Valtos    Venture Capitalist</div>
+                        <div class="board-name">Billy Valtos</div>
+                        <div class="board-title">Venture Capitalist</div>
                     </div>
                     
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://i.ibb.co/KxY79D2C/image-49.png" alt="Patrick Suel">
                         </div>
-                        <div class="board-name">Patrick Suel    Capital K</div>
+                        <div class="board-name">Patrick Suel</div>
+                        <div class="board-title">Capital K</div>
                     </div>
                 </div>
             </section>
