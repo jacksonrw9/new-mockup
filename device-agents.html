@@ -420,53 +420,36 @@
             font-size: 0.9rem;
         }
 
-        /* Technical Specs Section */
-        .tech-specs-section {
+        /* Email Opt-in Section */
+        .email-optin-section {
             background: #f8fafc;
             padding: 4rem 0;
             margin: 5rem -2rem;
             border-radius: 20px;
         }
 
-        .tech-specs-container {
-            max-width: 1400px;
+        .email-optin-container {
+            max-width: 600px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .tech-specs-header {
             text-align: center;
-            margin-bottom: 3rem;
         }
 
-        .tech-specs-header h2 {
+        .email-optin-section h2 {
             font-size: 2.2rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 1rem;
         }
 
-        .tech-diagram {
-            width: 100%;
-            height: 400px;
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .email-optin-section p {
+            font-size: 1.1rem;
             color: #64748b;
-            font-size: 1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
+        .optin-form {
             background: #ffffff;
             padding: 2rem;
             border-radius: 12px;
@@ -474,55 +457,49 @@
             border: 1px solid #e2e8f0;
         }
 
-        .feature-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
         }
 
-        .feature-card p {
-            color: #64748b;
-            line-height: 1.6;
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: #ffffff;
-            padding: 3rem 0;
-            margin: 5rem -2rem 0;
-            text-align: center;
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
-        .cta-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a90b8;
         }
 
-        .cta-section h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
+        .submit-btn {
+            width: 100%;
             background: #d97706;
             color: white;
-            padding: 0.75rem 2rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
             border-radius: 6px;
-            text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            cursor: pointer;
             transition: background 0.3s ease;
         }
 
-        .cta-btn:hover {
+        .submit-btn:hover {
             background: #b45309;
         }
 
@@ -763,7 +740,7 @@
                 gap: 2rem;
             }
 
-            .workflow-steps, .use-cases-grid, .features-grid {
+            .workflow-steps, .use-cases-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -825,7 +802,7 @@
                 font-size: 2rem;
             }
 
-            .how-it-works h2, .benefits-header h2, .use-cases-header h2, .tech-specs-header h2 {
+            .how-it-works h2, .benefits-header h2, .use-cases-header h2, .email-optin-section h2 {
                 font-size: 1.8rem;
             }
 
@@ -922,7 +899,7 @@
                     <a href="request-demo.html" class="request-demo-btn">Request a Demo</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://i.postimg.cc/rwRrwVJs/Screenshot-2025-08-22-at-14-14-32-1.png" alt="Edge Puck Device in Cleanroom Environment" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;">
+                    <img src="https://i.ibb.co/j97JpVtg/907985-74345af710dc4d738fd98cb8a452cdd6-mv2.jpg" alt="Edge Puck Device in Cleanroom Environment" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;">
                 </div>
             </section>
 
@@ -1009,24 +986,25 @@
                 </div>
             </section>
 
-            <!-- Technical Specifications Section -->
-            <section class="tech-specs-section">
-                <div class="tech-specs-container">
-                    <div class="tech-specs-header">
-                        <h2>Technical Specifications</h2>
-                    </div>
+            <!-- Email Opt-in Section -->
+            <section class="email-optin-section">
+                <div class="email-optin-container">
+                    <h2>Get the Full Product Brochure</h2>
+                    <p>All the detailed technical specifications and comprehensive product information delivered to your inbox.</p>
                     
-                    <div class="tech-diagram">
-                        <img src="https://i.postimg.cc/yxrD7t30/AD-4n-Xcz-Rb-EY06so-Fc-Pli-Y1-PX3rp-W-vqsv-CIi-Si-P91-RL-ofo-FWBeqlmvknjssysn-U-Re-FSa57-YFS3w8a-Xjp-T6y-O7-Aztp2-KH37-E5.png" alt="Edge Puck Exploded View Diagram" style="width: 100%; height: 100%; object-fit: contain; border-radius: 18px;">
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <div class="cta-container">
-                    <h2>Learn more about the Edge Puck and our Platform</h2>
-                    <a href="request-demo.html" class="cta-btn">Request a Demo</a>
+                    <form class="optin-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Company Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
                 </div>
             </section>
         </div>
