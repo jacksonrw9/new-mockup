@@ -258,6 +258,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
+            margin-bottom: 2rem;
         }
 
         .connection-item {
@@ -294,6 +295,12 @@
 
         .learn-more-link:hover {
             color: #3a7ba8;
+        }
+
+        /* Centered link at bottom of connection section */
+        .connection-link-container {
+            text-align: center;
+            margin-top: 3rem;
         }
 
         /* Heart Beat Section */
@@ -878,13 +885,14 @@
                             <h3>Enable Continuous Data Capture, Monitoring and Remote Operation</h3>
                             <p>Connecting instruments enables automated capture of all sample data, continuous monitoring and logging of all device activity, and also allows operators to remotely start, stop, and monitor operations without needing to suit up—eliminating printouts, manual processes like transcription and data entry, and unnecessary contamination risks in cleanroom environments.</p>
                         </div>
-                    <div style="text-align: left; margin: 1rem 0;">
+                    </div>
+                    
+                    <!-- Centered link at bottom of grey section -->
+                    <div class="connection-link-container">
                         <a href="automate.html" class="learn-more-link">Learn About How We Automate Data Formatting</a>
                     </div>
                 </div>
             </section>
-
-
 
             <!-- Heart Beat Section -->
             <section class="heartbeat-section">
