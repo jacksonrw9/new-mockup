@@ -386,14 +386,12 @@
 
         .instruments-grid {
             background: #f8fafc;
-            padding: 3rem 2rem;
+            padding: 1.5rem;
             border-radius: 20px;
             border: 2px solid #e2e8f0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 2rem;
+            display: flex;
             align-items: center;
-            justify-items: center;
+            justify-content: center;
             margin-bottom: 3rem;
         }
 
@@ -415,7 +413,7 @@
         /* Demo Section */
         .demo-section {
             background: #ffffff;
-            padding: 3rem 0;
+            padding: 1rem 0;
             margin: 0 -2rem;
             text-align: center;
         }
@@ -708,8 +706,7 @@
             }
 
             .instruments-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 1.5rem;
+                padding: 1rem;
             }
 
             /* Mobile navigation adjustments */
@@ -766,6 +763,10 @@
             .heartbeat-header h2,
             .instruments-header h2 {
                 font-size: 1.8rem;
+            }
+
+            .instruments-grid {
+                padding: 1rem;
             }
         }
     </style>
@@ -926,7 +927,7 @@
                 </div>
                 
                 <div class="instruments-grid">
-                    <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081562/supported-instruments_woily3.png" alt="Supported Scientific Instruments Dashboard" style="width: 100%; height: auto; border-radius: 12px; grid-column: 1 / -1;">
+                    <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081562/supported-instruments_woily3.png" alt="Supported Scientific Instruments Dashboard" style="width: 100%; height: auto; border-radius: 12px; max-width: 100%;">
                 </div>
             </section>
 
