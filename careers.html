@@ -810,18 +810,18 @@
                 font-size: 1.6rem;
             }
 
-            /* Very small mobile hero - maintains full width, adjusts height */
+            /* Very small mobile hero - dynamic height */
             .hero-section {
-                height: 30vh;
-                min-height: 200px;
+                aspect-ratio: 16/9;
+                min-height: 150px;
             }
         }
 
         /* Ultra small screens */
         @media (max-width: 320px) {
             .hero-section {
-                height: 25vh;
-                min-height: 180px;
+                aspect-ratio: 16/9;
+                min-height: 120px;
             }
         }
     </style>
