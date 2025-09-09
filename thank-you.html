@@ -731,5 +731,54 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        function toggleMobileDropdown(event, dropdownId) {
+            event.preventDefault();
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = event.target.querySelector('.dropdown-arrow');
+            
+            // Close all other dropdowns
+            const allDropdowns = document.querySelectorAll('.mobile-dropdown');
+            const allArrows = document.querySelectorAll('.dropdown-arrow');
+            
+            allDropdowns.forEach(dd => {
+                if (dd.id !== dropdownId) {
+                    dd.classList.remove('active');
+                }
+            });
+            
+            allArrows.forEach(arr => {
+                if (arr !== arrow) {
+                    arr.classList.remove('rotated');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Close mobile menu when pressing escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>
