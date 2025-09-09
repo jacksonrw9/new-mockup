@@ -680,7 +680,11 @@
                     
                     <h3>Simply enter your information below and we'll deliver a sandbox environment to your email:</h3>
                     
-                    <form class="sandbox-form" onsubmit="handleSandboxSubmit(event)">
+                    <!-- Updated form with Netlify integration -->
+                    <form class="sandbox-form" name="sandbox" method="POST" data-netlify="true">
+                        <!-- Hidden form name field for Netlify -->
+                        <input type="hidden" name="form-name" value="sandbox" />
+                        
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -692,12 +696,12 @@
                         </div>
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="marketing" name="marketing">
+                            <input type="checkbox" id="marketing" name="marketing" value="yes">
                             <label for="marketing" class="checkbox-label">I agree to receive email updates.</label>
                         </div>
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="terms" name="terms" required>
+                            <input type="checkbox" id="terms" name="terms" value="yes" required>
                             <label for="terms" class="checkbox-label">
                                 I agree with <a href="#" class="privacy-link">Terms of Service</a> and <a href="#" class="privacy-link">Privacy Policy</a>
                             </label>
@@ -844,13 +848,6 @@
                 closeMobileMenu();
             }
         });
-    </script>
-
-    <script>
-        function handleSandboxSubmit(event) {
-            event.preventDefault();
-            alert('Thank you! Your sandbox environment will be delivered to your email in the next 24 to 48 hours.');
-        }
     </script>
 </body>
 </html>
