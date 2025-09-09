@@ -686,8 +686,11 @@
                 <h1>Contact Us</h1>
             </div>
 
-            <!-- Contact Form -->
-            <form class="contact-form">
+            <!-- Contact Form with Netlify integration -->
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <!-- Hidden form name field for Netlify -->
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First name*</label>
@@ -727,7 +730,7 @@
 
                 <div class="checkbox-group">
                     <div class="checkbox-item">
-                        <input type="checkbox" id="communications" name="communications">
+                        <input type="checkbox" id="communications" name="communications" value="yes">
                         <label for="communications">I agree to receive email communications from Phizzle.</label>
                     </div>
                 </div>
@@ -737,6 +740,9 @@
                     
                     <p>By clicking submit below, you consent to allow Phizzle to store and process the personal information submitted above to provide you the content requested.</p>
                 </div>
+
+                <!-- reCAPTCHA will be inserted here automatically by Netlify -->
+                <div data-netlify-recaptcha="true"></div>
 
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
@@ -811,8 +817,9 @@
                     <div class="email-signup">
                         <h5>Stay Updated</h5>
                         <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.75rem;">Join our newsletter to get the latest updates</p>
-                        <form class="email-form">
-                            <input type="email" class="email-input" placeholder="Enter your email" required>
+                        <form class="email-form" name="newsletter" method="POST" data-netlify="true">
+                            <input type="hidden" name="form-name" value="newsletter" />
+                            <input type="email" class="email-input" name="email" placeholder="Enter your email" required>
                             <button type="submit" class="email-submit">Subscribe</button>
                         </form>
                     </div>
@@ -828,5 +835,40 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Function to show the thank you modal
+        function showModal() {
+            document.getElementById('thankYouModal').classList.add('show');
+        }
+
+        // Function to close the thank you modal
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.remove('show');
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById('thankYouModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Handle form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // Let Netlify handle the submission normally
+            // After a short delay, show the modal (Netlify will handle the redirect/response)
+            setTimeout(function() {
+                showModal();
+            }, 100);
+        });
+    </script>
 </body>
 </html>
