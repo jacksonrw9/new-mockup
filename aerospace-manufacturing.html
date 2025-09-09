@@ -179,7 +179,7 @@
             width: 50vw;
             height: 100vh;
             background: #f3f4f6;
-            padding: 1rem 0;
+            padding: 0;
             transition: right 0.3s ease;
             z-index: 1000;
             overflow-y: auto;
@@ -208,9 +208,40 @@
             visibility: visible;
         }
 
+        .mobile-menu-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            background: #ffffff;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #374151;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+            line-height: 1;
+        }
+
+        .mobile-menu-close:hover {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
         .mobile-nav-links {
             list-style: none;
-            padding: 0;
+            padding: 1rem 0 0 0;
             margin: 0;
         }
 
@@ -354,12 +385,16 @@
 
         .hero-image {
             width: 100%;
-            height: 350px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64748b;
-            font-size: 1rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         /* Connection Features Section */
@@ -499,6 +534,13 @@
             justify-content: center;
             color: #64748b;
             font-size: 1rem;
+        }
+
+        .benefit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
         }
 
         .manufacturing-image {
@@ -1007,6 +1049,9 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">×</button>
+            </div>
             <ul class="mobile-nav-links">
                 <li>
                     <a href="#" onclick="toggleMobileDropdown(event, 'platform-dropdown')">
@@ -1095,7 +1140,7 @@
                     <a href="request-demo.html" class="request-demo-btn">Request a Demo</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081548/connected-plant-computer_v4lsos.png" alt="Aerospace Connected Plant Interface" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                    <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081548/connected-plant-computer_v4lsos.png" alt="Aerospace Connected Plant Interface"/>
                 </div>
             </section>
 
@@ -1146,7 +1191,7 @@
                         <p>Accelerate data flow from critical measurement instruments to Digital Systems and maintain the highest level of data integrity by completely eliminating the potential for human error in quality documentation.</p>
                     </div>
                     <div class="benefit-image manufacturing-image">
-                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081555/aerospace-benefit1_ezlq4a.jpg" alt="Quality Control Interface" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081555/aerospace-benefit1_ezlq4a.jpg" alt="Quality Control Interface"/>
                     </div>
                 </div>
                 
@@ -1156,7 +1201,7 @@
                         <p>Consistent, formatted measurement data enables quality engineers to utilize AI and ML to identify trends, predict defects, and optimize manufacturing processes.</p>
                     </div>
                     <div class="benefit-image ai-image">
-                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081561/ai-applications_wyse3p.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081561/ai-applications_wyse3p.png" alt="AI Applications"/>
                     </div>
                 </div>
                 
@@ -1166,7 +1211,7 @@
                         <p>Built-in electronic review and signature workflows ensure continuous compliance with aerospace quality standards, keeping manufacturing facilities audit-ready at all times.</p>
                     </div>
                     <div class="benefit-image compliance-image">
-                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081557/aerospace-AS9100-benefit3_x5nyoc.jpg" alt="NADCAP and AS9100 Compliance Interface" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081557/aerospace-AS9100-benefit3_x5nyoc.jpg" alt="NADCAP and AS9100 Compliance Interface"/>
                     </div>
                 </div>
                 
@@ -1176,7 +1221,7 @@
                         <p>Maintain complete digital traceability of all measurements and quality data from raw materials through final assembly, supporting aerospace industry requirements for full component lifecycle documentation.</p>
                     </div>
                     <div class="benefit-image supply-chain-image">
-                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081553/aerospace-benefit4_ce4voj.jpg" alt="Supply Chain Visualization" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081553/aerospace-benefit4_ce4voj.jpg" alt="Supply Chain Visualization"/>
                     </div>
                 </div>
             </section>
