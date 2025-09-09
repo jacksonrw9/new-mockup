@@ -1012,7 +1012,7 @@
             <section class="email-optin-section">
                 <div class="email-optin-container">
                     <h2>Get the Full Product Brochure</h2>
-                    <p>All the detailed technical specifications and comprehensive product information delivered to your inbox.</p>
+                    <p>All the detailed technical specifications and comprehensive product information delivered to your inbox. A detailed product brochure will be sent to your inbox shortly.</p>
                     
                     <form class="optin-form" name="product-brochure" method="POST" data-netlify="true">
                         <input type="hidden" name="form-name" value="product-brochure" />
@@ -1127,6 +1127,49 @@
     </footer>
 
     <script>
+        // Form submission handler
+        document.getElementById('brochure-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Show success popup
+                document.getElementById('success-popup').classList.add('active');
+                // Reset form
+                document.getElementById('brochure-form').reset();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('There was an error submitting the form. Please try again.');
+            });
+        });
+
+        function closePopup() {
+            document.getElementById('success-popup').classList.remove('active');
+        }
+
+        // Close popup when clicking overlay
+        document.getElementById('success-popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close popup with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileMenuOverlay');
