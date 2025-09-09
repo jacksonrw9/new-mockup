@@ -842,9 +842,13 @@
             document.getElementById('thankYouModal').classList.add('show');
         }
 
-        // Function to close the thank you modal
+        // Function to close the thank you modal and redirect to home
         function closeModal() {
             document.getElementById('thankYouModal').classList.remove('show');
+            // Redirect to home page after modal closes
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 300); // Small delay to allow modal close animation
         }
 
         // Close modal when clicking outside of it
