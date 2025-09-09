@@ -328,17 +328,31 @@
             transform: rotate(180deg);
         }
 
-        /* Hero Section */
+        /* Hero Section - FIXED VERSION */
         .hero-section {
-            background: url('https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081563/join-phizzle_danqxh.png');
-            background-size: 80% auto;
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: 50vh;
             width: 100%;
             margin: 0;
             padding: 0;
             position: relative;
+            overflow: hidden;
+            /* Default desktop height */
+            height: 50vh;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081563/join-phizzle_danqxh.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            /* Key fix: Use contain to ensure full image is always visible */
+            background-size: contain;
+            /* Center the image horizontally */
+            background-position: center top;
         }
 
         .hero-content {
@@ -720,6 +734,14 @@
             }
         }
 
+        /* Tablet specific hero adjustments */
+        @media (max-width: 1024px) {
+            .hero-section {
+                height: 40vh;
+                min-height: 300px;
+            }
+        }
+
         /* Mobile Responsive Design (768px and below) */
         @media (max-width: 768px) {
             /* Even smaller logo on mobile */
@@ -732,10 +754,10 @@
                 font-size: 2.2rem;
             }
 
+            /* Mobile hero section - ensure full image visibility */
             .hero-section {
-                height: 100vh;
-                margin-left: calc(-50vw + 50%);
-                margin-right: calc(-50vw + 50%);
+                height: 30vh;
+                min-height: 250px;
             }
 
             .info-box {
@@ -786,6 +808,20 @@
 
             .roles-container h2 {
                 font-size: 1.6rem;
+            }
+
+            /* Very small mobile hero */
+            .hero-section {
+                height: 25vh;
+                min-height: 200px;
+            }
+        }
+
+        /* Ultra small screens */
+        @media (max-width: 320px) {
+            .hero-section {
+                height: 20vh;
+                min-height: 180px;
             }
         }
     </style>
