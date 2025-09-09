@@ -18,7 +18,7 @@
             color: #333;
         }
 
-        /* OPTIMIZED NAVIGATION STYLES - START */
+        /* Navigation */
         nav {
             background: #64748b;
             padding: 1rem 0;
@@ -157,7 +157,7 @@
         }
 
         .request-demo:hover {
-            background: #b45309;
+            background: #b45309 !important;
             color: white !important;
         }
 
@@ -173,19 +173,75 @@
         }
 
         .mobile-menu {
-            display: none;
-            background: #64748b;
-            padding: 1rem 0;
-            border-top: 1px solid #475569;
+            position: fixed;
+            top: 0;
+            right: -50vw;
+            width: 50vw;
+            height: 100vh;
+            background: #f3f4f6;
+            padding: 0;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            background: #ffffff;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #374151;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+            line-height: 1;
+        }
+
+        .mobile-menu-close:hover {
+            background: #f3f4f6;
+            color: #1f2937;
         }
 
         .mobile-menu.active {
-            display: block;
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         .mobile-nav-links {
             list-style: none;
-            padding: 0;
+            padding: 1rem 0 0 0;
             margin: 0;
         }
 
@@ -201,7 +257,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #ffffff;
+            color: #374151;
             text-decoration: none;
             padding: 1rem 2rem;
             font-weight: 500;
@@ -211,7 +267,7 @@
         }
 
         .mobile-nav-links > li > a:hover {
-            background-color: #475569;
+            background-color: #e5e7eb;
         }
 
         .mobile-menu .mobile-dropdown {
@@ -272,52 +328,6 @@
             transform: rotate(180deg);
         }
 
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1350px) {
-            /* Show hamburger menu, hide desktop nav */
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            /* Smaller logo on tablet */
-            .logo {
-                font-size: 1.6rem;
-            }
-
-            .logo-dots .dot:nth-child(1) {
-                width: 3px;
-                height: 3px;
-            }
-
-            .logo-dots .dot:nth-child(2) {
-                width: 5px;
-                height: 5px;
-            }
-
-            .logo-dots .dot:nth-child(3) {
-                width: 7px;
-                height: 7px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Even smaller logo on mobile */
-            .logo {
-                font-size: 1.4rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-        }
-        /* OPTIMIZED NAVIGATION STYLES - END */
-
         /* Main Content */
         .main-content {
             background: #ffffff;
@@ -374,6 +384,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .request-demo-btn:hover {
@@ -454,6 +465,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .learn-more-btn:hover {
@@ -465,6 +477,7 @@
             background: #e2e8f0;
             padding: 4rem 0;
             margin: 0 -2rem;
+            border-radius: 20px;
         }
 
         .benefits-container {
@@ -575,7 +588,7 @@
         .cta-section {
             background: #ffffff;
             padding: 3rem 0;
-            margin: 0 -2rem;
+            margin: 5rem -2rem 0;
             text-align: center;
         }
 
@@ -610,6 +623,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .cta-btn:hover {
@@ -854,6 +868,38 @@
             color: #94a3b8;
         }
 
+        /* Mobile/Tablet Responsive Design */
+        @media (max-width: 1350px) {
+            /* Show hamburger menu, hide desktop nav */
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Smaller logo on tablet */
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .logo-dots .dot:nth-child(1) {
+                width: 3px;
+                height: 3px;
+            }
+
+            .logo-dots .dot:nth-child(2) {
+                width: 5px;
+                height: 5px;
+            }
+
+            .logo-dots .dot:nth-child(3) {
+                width: 7px;
+                height: 7px;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-section,
@@ -888,8 +934,26 @@
         }
 
         @media (max-width: 768px) {
+            /* Even smaller logo on mobile */
+            .logo {
+                font-size: 1.4rem;
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
+                text-align: center;
+            }
+
+            .hero-content h2 {
+                text-align: center;
+            }
+
+            .hero-content p {
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
             }
 
             .benefits-header h2,
@@ -911,9 +975,25 @@
             .footer-bottom-links {
                 gap: 1rem;
             }
+
+            /* Social links mobile sizing */
+            .social-link {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
         }
 
+        /* Very small mobile (480px and below) */
         @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .content-container {
+                padding: 0 1rem;
+            }
+
             .hero-content h1 {
                 font-size: 1.8rem;
             }
@@ -925,12 +1005,6 @@
             .benefits-header h2,
             .software-header h2 {
                 font-size: 1.6rem;
-            }
-
-            .social-link {
-                width: 44px;
-                height: 44px;
-                font-size: 1.2rem;
             }
         }
     </style>
@@ -1008,8 +1082,14 @@
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
 
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">×</button>
+            </div>
             <ul class="mobile-nav-links">
                 <li>
                     <a href="#" onclick="toggleMobileDropdown(event, 'platform-dropdown')">
@@ -1081,7 +1161,9 @@
                     </ul>
                 </li>
             </ul>
-            <a href="request-demo.html" class="mobile-request-demo">Request a Demo</a>
+            <div style="padding: 1rem 2rem; border-top: 1px solid #d1d5db;">
+                <a href="request-demo.html" class="mobile-request-demo">Request a Demo</a>
+            </div>
         </div>
     </nav>
 
@@ -1304,7 +1386,16 @@
     <script>
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
             mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
         }
 
         function toggleMobileDropdown(event, dropdownId) {
@@ -1336,8 +1427,7 @@
         // Close mobile menu when pressing escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                const mobileMenu = document.getElementById('mobileMenu');
-                mobileMenu.classList.remove('active');
+                closeMobileMenu();
             }
         });
     </script>
