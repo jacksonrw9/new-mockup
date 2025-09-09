@@ -18,7 +18,7 @@
             color: #333;
         }
 
-        /* Navigation - Same as other pages */
+        /* Navigation Styles */
         nav {
             background: #64748b;
             padding: 1rem 0;
@@ -140,11 +140,182 @@
             letter-spacing: 0.5px;
             font-weight: 600 !important;
             font-size: 0.8rem !important;
+            min-height: 44px;
         }
 
         .request-demo:hover {
             background: #b45309 !important;
             color: white !important;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -50vw;
+            width: 50vw;
+            height: 100vh;
+            background: #f3f4f6;
+            padding: 0;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            background: #ffffff;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #374151;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+            line-height: 1;
+        }
+
+        .mobile-menu-close:hover {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 1rem 0 0 0;
+            margin: 0;
+        }
+
+        .mobile-nav-links > li {
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .mobile-nav-links > li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav-links > li > a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #374151;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease;
+            min-height: 44px;
+        }
+
+        .mobile-nav-links > li > a:hover {
+            background-color: #e5e7eb;
+        }
+
+        .mobile-menu .mobile-dropdown {
+            background: #f3f4f6 !important;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu .mobile-dropdown.active {
+            max-height: 500px;
+        }
+
+        .mobile-menu .mobile-dropdown li {
+            list-style: none;
+        }
+
+        .mobile-menu .mobile-dropdown a {
+            display: block;
+            color: #374151 !important;
+            text-decoration: none;
+            padding: 0.75rem 3rem;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            min-height: 44px;
+        }
+
+        .mobile-menu .mobile-dropdown a:hover {
+            background-color: #e5e7eb !important;
+        }
+
+        .mobile-request-demo {
+            display: block;
+            background: #d97706 !important;
+            color: white !important;
+            padding: 0.75rem 1rem !important;
+            border-radius: 6px !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            transition: background 0.3s ease !important;
+            text-decoration: none !important;
+            min-height: 44px;
+        }
+
+        .mobile-request-demo:hover {
+            background: #b45309 !important;
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-arrow.rotated {
+            transform: rotate(180deg);
         }
 
         /* Main Content */
@@ -203,6 +374,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .request-demo-btn:hover {
@@ -435,6 +607,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .cta-btn-primary:hover {
@@ -453,13 +626,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: background 0.3s ease;
+            min-height: 44px;
         }
 
         .cta-btn-secondary:hover {
             background: #b45309;
         }
 
-        /* Footer - Updated with full footer from homepage */
+        /* Footer */
         .footer {
             background: #1e293b;
             color: #e2e8f0;
@@ -539,6 +713,9 @@
             text-decoration: none;
             transition: color 0.3s ease;
             font-size: 0.9rem;
+            min-height: 44px;
+            display: inline-block;
+            padding: 0.25rem 0;
         }
 
         .footer-section ul li a:hover {
@@ -575,6 +752,7 @@
             font-size: 0.9rem;
             transition: border-color 0.3s ease;
             margin-bottom: 0.5rem;
+            min-height: 44px;
         }
 
         .email-input::placeholder {
@@ -597,6 +775,7 @@
             cursor: pointer;
             transition: background 0.3s ease;
             font-size: 0.9rem;
+            min-height: 44px;
         }
 
         .email-submit:hover {
@@ -683,19 +862,66 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
+            min-height: 44px;
+            display: inline-block;
+            padding: 0.25rem 0;
         }
 
         .footer-bottom-links a:hover {
             color: #94a3b8;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-section {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+        /* Mobile/Tablet Responsive Design */
+        @media (max-width: 1350px) {
+            /* Show hamburger menu, hide desktop nav */
+            .nav-links {
+                display: none;
             }
 
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Smaller logo on tablet */
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .logo-dots .dot:nth-child(1) {
+                width: 3px;
+                height: 3px;
+            }
+
+            .logo-dots .dot:nth-child(2) {
+                width: 5px;
+                height: 5px;
+            }
+
+            .logo-dots .dot:nth-child(3) {
+                width: 7px;
+                height: 7px;
+            }
+
+            /* Hero section adjustments */
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            /* Platform overview adjustments */
+            .platform-overview .highlight-bubble {
+                padding: 2rem 3rem;
+            }
+
+            .platform-overview .highlight-bubble p {
+                font-size: 1.2rem;
+            }
+
+            /* Process steps adjustments */
             .process-steps {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -705,6 +931,11 @@
                 transform: rotate(90deg);
             }
 
+            .hero-image {
+                height: 250px;
+            }
+
+            /* Footer adjustments */
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -718,55 +949,91 @@
                 grid-column: 1 / -1;
                 margin-top: 2rem;
             }
-
-            /* Mobile navigation adjustments */
-            .dropdown {
-                position: static;
-                transform: none;
-                box-shadow: none;
-                background: #475569;
-                margin: 0.5rem 0;
-                border-radius: 4px;
-            }
-
-            .dropdown a {
-                color: #e2e8f0;
-                padding: 0.5rem 1rem;
-            }
-
-            .dropdown a:hover {
-                background-color: #334155;
-                color: #94a3b8;
-                border-left-color: #94a3b8;
-            }
         }
 
+        /* Mobile Responsive Design (768px and below) */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+            /* Even smaller logo on mobile */
+            .logo {
+                font-size: 1.4rem;
             }
 
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
+            /* Hero content centered on mobile */
+            .hero-content {
+                text-align: center;
             }
 
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            .pharma-header h2, .benefits-header h2 {
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .hero-image {
+                height: 200px;
+            }
+
+            /* Platform overview mobile */
+            .platform-overview .highlight-bubble {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+
+            .platform-overview .highlight-bubble p {
+                font-size: 1.1rem;
+            }
+
+            /* Pharma section mobile */
+            .pharma-header h2 {
                 font-size: 1.8rem;
+                text-align: center;
+            }
+
+            /* Benefits section mobile */
+            .benefits-section {
+                margin: 3rem -1rem;
+                padding: 3rem 0;
+            }
+
+            .benefits-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .benefit-item {
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .benefit-item h3 {
+                font-size: 1.1rem;
+            }
+
+            /* CTA section mobile */
+            .cta-section h2 {
+                font-size: 1.6rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
 
+            .cta-btn-primary,
+            .cta-btn-secondary {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Footer mobile */
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -776,6 +1043,56 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
+            }
+
+            .footer-bottom-links {
+                gap: 1rem;
+            }
+
+            /* Social links mobile sizing */
+            .social-link {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Very small mobile (480px and below) */
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .main-content {
+                padding: 2rem 0;
+            }
+
+            .content-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .pharma-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .benefits-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .benefit-item h3 {
+                font-size: 1rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -792,6 +1109,8 @@
                 </div>
                 Phizzle
             </a>
+
+            <!-- Desktop Navigation -->
             <ul class="nav-links">
                 <li>
                     <a href="platform-overview.html">Platform ▼</a>
@@ -846,6 +1165,93 @@
                 </li>
                 <li><a href="request-demo.html" class="request-demo">Request a Demo</a></li>
             </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">×</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'platform-dropdown')">
+                        Platform 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="platform-dropdown">
+                        <li><a href="platform-overview.html">Platform Overview</a></li>
+                        <li><a href="connect.html">Connect</a></li>
+                        <li><a href="automate.html">Automate</a></li>
+                        <li><a href="integrate.html">Integrate</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'solutions-dropdown')">
+                        Solutions 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="solutions-dropdown">
+                        <li><a href="connected-plant.html">Connected Plant</a></li>
+                        <li><a href="device-agents.html">Edge Puck</a></li>
+                        <li><a href="phizzle-lens.html">Phizzle Lens</a></li>
+                        <li><a href="edge-manager.html">Edge Manager</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'applications-dropdown')">
+                        Applications 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="applications-dropdown">
+                        <li><a href="biopharma-manufacturing.html">Biopharma Manufacturing</a></li>
+                        <li><a href="aerospace-manufacturing.html">Aerospace Manufacturing</a></li>
+                        <li><a href="food-production.html">Food Production</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'resources-dropdown')">
+                        Resources 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="resources-dropdown">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="webinars.html">Webinars</a></li>
+                        <li><a href="apc-case-study.html">Case Study</a></li>
+                        <li><a href="connected-plant-sandbox.html">Connected Plant Sandbox</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'partners-dropdown')">
+                        Partners 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="partners-dropdown">
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleMobileDropdown(event, 'company-dropdown')">
+                        Company 
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="mobile-dropdown" id="company-dropdown">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div style="padding: 1rem 2rem; border-top: 1px solid #d1d5db;">
+                <a href="request-demo.html" class="mobile-request-demo">Request a Demo</a>
+            </div>
         </div>
     </nav>
 
@@ -922,7 +1328,7 @@
         </div>
     </main>
 
-    <!-- Footer - Updated with full footer from homepage -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
