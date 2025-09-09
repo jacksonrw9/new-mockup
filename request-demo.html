@@ -546,6 +546,18 @@
             color: #94a3b8;
         }
 
+        /* Success message styling */
+        .success-message {
+            background: #dcfce7;
+            border: 1px solid #16a34a;
+            color: #15803d;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            display: none;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .footer-content {
@@ -700,7 +712,16 @@
                     <h1>Request a Demo</h1>
                 </div>
 
-                <form class="demo-form" action="#" method="POST" onsubmit="handleFormSubmit(event)">
+                <!-- Success message (hidden by default) -->
+                <div id="successMessage" class="success-message">
+                    Thank you for your interest! Your demo request has been submitted successfully. We will contact you soon to schedule your personalized demo.
+                </div>
+
+                <!-- Updated form with Netlify integration -->
+                <form class="demo-form" name="demo-request" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                    <!-- Hidden form name field for Netlify -->
+                    <input type="hidden" name="form-name" value="demo-request" />
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First name<span class="required">*</span></label>
@@ -744,7 +765,7 @@
                         </div>
 
                         <div class="checkbox-group">
-                            <input type="checkbox" id="marketingEmails" name="marketingEmails">
+                            <input type="checkbox" id="marketingEmails" name="marketingEmails" value="yes">
                             <label for="marketingEmails" class="checkbox-label">
                                 I agree to receive other communications from Phizzle.
                             </label>
@@ -758,6 +779,9 @@
                             By clicking submit below, you consent to allow Phizzle to store and process the personal information submitted above to provide you the content requested.
                         </div>
                     </div>
+
+                    <!-- reCAPTCHA will be inserted here automatically by Netlify -->
+                    <div data-netlify-recaptcha="true"></div>
 
                     <div class="submit-section">
                         <button type="submit" class="submit-btn">Submit</button>
@@ -835,8 +859,9 @@
                     <div class="email-signup">
                         <h5>Stay Updated</h5>
                         <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.75rem;">Join our newsletter to get the latest updates</p>
-                        <form class="email-form">
-                            <input type="email" class="email-input" placeholder="Enter your email" required>
+                        <form class="email-form" name="newsletter" method="POST" data-netlify="true">
+                            <input type="hidden" name="form-name" value="newsletter" />
+                            <input type="email" class="email-input" name="email" placeholder="Enter your email" required>
                             <button type="submit" class="email-submit">Subscribe</button>
                         </form>
                     </div>
@@ -852,12 +877,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your interest! Your demo request has been submitted. We will contact you soon to schedule your personalized demo.');
-        }
-    </script>
 </body>
 </html>
