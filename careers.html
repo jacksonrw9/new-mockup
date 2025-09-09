@@ -331,14 +331,26 @@
         /* Hero Section */
         .hero-section {
             background: url('https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081563/join-phizzle_danqxh.png');
-            background-size: 100% 100%;
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            height: 100vh;
+            height: 60vh;
             width: 100%;
             margin: 0;
             padding: 0;
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 40vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 30vh;
+            }
         }
 
         .hero-content {
