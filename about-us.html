@@ -385,7 +385,7 @@
             font-size: 0.95rem;
         }
 
-        /* Leadership Section */
+        /* Leadership Section - CLEAN START */
         .leadership-section {
             margin-bottom: 6rem;
         }
@@ -395,53 +395,41 @@
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 3rem;
+            text-align: center;
         }
 
         .leadership-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            justify-items: center;
-        }
-
-        /* Additional leadership row for remaining members */
-        .leadership-grid-row2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 4rem auto 3rem;
-            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .leader-card {
-            text-align: center;
             background: #ffffff;
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-            width: 240px;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            transition: all 0.3s ease;
         }
 
         .leader-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .leader-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 8px;
-            margin: 0 auto 1rem;
-            background: #f3f4f6;
-            border: 2px solid #e2e8f0;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
             overflow: hidden;
+            border: 4px solid #f1f5f9;
+            position: relative;
         }
 
         .leader-photo img {
@@ -457,90 +445,85 @@
         }
 
         .leader-name {
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .leader-title {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #64748b;
             font-weight: 500;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .linkedin-icon {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             color: #0077b5;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .linkedin-icon:hover {
             color: #005885;
+            transform: scale(1.1);
         }
 
-        /* Make LinkedIn icon links clickable */
-        .leader-title a,
-        .board-title a {
+        .leader-title a {
             text-decoration: none;
             display: inline-flex;
             align-items: center;
         }
 
-        .leader-title a:hover .linkedin-icon,
-        .board-title a:hover .linkedin-icon {
-            color: #005885;
+        /* Board Section - CLEAN START */
+        .board-section {
+            margin-bottom: 6rem;
         }
 
-        /* Board Section */
         .board-section h2 {
             font-size: 2.2rem;
             font-weight: 600;
             color: #1f2937;
             margin-bottom: 3rem;
+            text-align: center;
         }
 
         .board-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 5rem;
-            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .board-member {
-            text-align: center;
             background: #ffffff;
             border-radius: 12px;
             padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-            width: 240px;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            transition: all 0.3s ease;
         }
 
         .board-member:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .board-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 8px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             margin: 0 auto 1rem;
-            background: #f3f4f6;
-            border: 2px solid #e2e8f0;
             overflow: hidden;
+            border: 3px solid #f1f5f9;
         }
 
         .board-photo img {
@@ -556,31 +539,26 @@
         }
 
         .board-name {
-            font-size: 0.95rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: #1f2937;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .board-title {
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: #64748b;
             font-weight: 500;
-            line-height: 1.3;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
-        /* Additional board row for remaining members */
-        .board-grid-row2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            justify-items: center;
+        .board-title a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
 
         /* Footer Section */
@@ -875,21 +853,13 @@
             }
 
             .leadership-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .leadership-grid-row2 {
-                grid-template-columns: 1fr;
-                max-width: 300px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
             }
 
             .board-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .board-grid-row2 {
-                grid-template-columns: 1fr;
-                max-width: 300px;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.2rem;
             }
         }
 
@@ -927,20 +897,12 @@
 
             .leadership-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .leadership-grid-row2 {
-                grid-template-columns: 1fr;
-                max-width: 300px;
+                max-width: 400px;
             }
 
             .board-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .board-grid-row2 {
-                grid-template-columns: 1fr;
-                max-width: 300px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                max-width: 600px;
             }
 
             /* Social links mobile sizing */
@@ -972,6 +934,16 @@
             .leadership-section h2,
             .board-section h2 {
                 font-size: 1.6rem;
+            }
+
+            .board-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+
+            .leader-card,
+            .board-member {
+                padding: 1.5rem 1rem;
             }
         }
     </style>
@@ -1199,9 +1171,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="leadership-grid-row2">
                     <div class="leader-card">
                         <div class="leader-photo">
                             <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081542/stephen-peary_dqdyiq.png" alt="Stephen Peary">
@@ -1298,9 +1268,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="board-grid-row2">
                     <div class="board-member">
                         <div class="board-photo">
                             <img src="https://res.cloudinary.com/dqiggfeuq/image/upload/v1757081543/ron-ricci_qjr23g.png" alt="Ron Ricci">
@@ -1487,3 +1455,4 @@
     </script>
 </body>
 </html>
+                            
