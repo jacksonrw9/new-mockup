@@ -340,10 +340,10 @@
             padding: 0 2rem;
         }
 
-        /* Hero Section */
+        /* Hero Section - Updated to match Phizzle Lens layout */
         .hero-section {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
             margin-bottom: 5rem;
@@ -364,17 +364,23 @@
             margin-bottom: 2rem;
         }
 
+        /* Updated hero image styling to match Phizzle Lens */
         .hero-visual {
+            width: 100%;
+            height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .hero-visual img {
             width: 100%;
-            max-width: 800px;
-            height: auto;
-            border-radius: 12px;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
         }
 
         /* Capabilities Section */
@@ -749,6 +755,11 @@
                 font-size: 2rem;
             }
 
+            /* Updated hero image height for tablet */
+            .hero-visual {
+                height: 250px;
+            }
+
             /* Capabilities section adjustments */
             .capabilities-container {
                 padding: 0 1rem;
@@ -792,6 +803,11 @@
 
             .hero-content p {
                 font-size: 0.9rem;
+            }
+
+            /* Updated hero image height for mobile */
+            .hero-visual {
+                height: 200px;
             }
 
             /* Capabilities section mobile */
