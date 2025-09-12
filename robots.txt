@@ -1,0 +1,30 @@
+# Robots.txt for Phizzle.com
+# This file tells search engine crawlers which pages they can access
+
+User-agent: *
+Allow: /
+
+# Block access to common admin/system directories (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /tmp/
+
+# Block common files that shouldn't be indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+
+# Allow access to CSS and JS files for better rendering in search results
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://phizzle.com/sitemap.xml
+
+# Crawl delay (optional - limits how fast bots crawl your site)
+# Crawl-delay: 1
